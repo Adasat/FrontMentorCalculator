@@ -1,0 +1,23 @@
+.calculator{
+  width: 300px;
+  color: hsl(0, 0%, 100%);
+  font-family: 'League Spartan', sans-serif;
+}
+
+.blockResult {
+  background-color: hsl(223, 31%, 20%);
+  border-radius: 6px;
+  text-align: end;
+}
+
+.result{
+  padding: 20px;
+  font-size: x-large;
+  font-family: 'League Spartan', sans-serif;
+}
+
+@media screen and (min-width: 275px) and (max-width: 350px) {
+  .calculator{
+    width: 100%;
+  }
+}

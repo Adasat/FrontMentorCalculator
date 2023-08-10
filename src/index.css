@@ -1,0 +1,23 @@
+.attribution {
+  font-size: 11px;
+  width: 300px;
+  text-align: center;
+  bottom: 30px;
+  position: absolute;
+  text-align: center;
+  color: white;
+  font-size: 12px;
+}
+
+.attribution a {
+  color: hsl(110, 96%, 51%);
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(222, 26%, 31%);
+  height: 100vh;
+  position: relative
+}
