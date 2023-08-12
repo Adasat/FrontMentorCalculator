@@ -18,7 +18,7 @@
   --color-text-white: hsl(0, 0%, 100%); 
   --color-title: hsl(0, 0%, 100%);
   --color-text-attribution: orange;
-  --color-text-theme: hsl(0, 0%, 100%)
+  --color-text-theme: hsl(0, 0%, 100%);
 }
 
 :root[data-theme='theme 2']{
@@ -41,7 +41,7 @@
     --color-text-white: hsl(0, 0%, 100%);
     --color-title: hsl(60, 10%, 19%);
     --color-text-attribution: orange;
-    --color-text-theme: hsl(60, 10%, 19%)
+    --color-text-theme: hsl(60, 10%, 19%);
     
 
 }
