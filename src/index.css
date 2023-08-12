@@ -73,7 +73,7 @@
   font-size: 10px;
   text-align: center;
   text-align: center;
-  color: var(--color-text-attribution);
+  color: var(--color-text-theme);
   margin-top: 50px;
   transition: all 0.8s ease-in-out;
   height: 40px;
