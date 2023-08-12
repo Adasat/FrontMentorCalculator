@@ -1,23 +1,101 @@
+:root[data-theme='theme 1']{
+  /*Backgrounds */
+  --bg-color: hsl(222, 26%, 31%);
+  --bg-color-toogle: hsl(223, 31%, 20%);
+  --bg-color-screen: hsl(224, 36%, 15%);
+
+  /* Keys */
+  --bg-color-delete: hsl(225, 21%, 49%);
+  --shadow-delete: hsl(224, 28%, 35%);
+  --bg-color-equal: hsl(6, 63%, 50%);
+  --shadow-equal: hsl(6, 70%, 34%);
+  --bg-color-keys: hsl(30, 25%, 89%);
+  --bg-shadow-keys: hsl(28, 16%, 65%);
+
+  /* Text */
+  --color-text: hsl(221, 14%, 31%);
+  --color-text-secondary: hsl(0, 0%, 100%);
+  --color-text-white: hsl(0, 0%, 100%); 
+  --color-title: hsl(0, 0%, 100%);
+  --color-text-attribution: orange;
+  --color-text-theme: hsl(0, 0%, 100%)
+}
+
+:root[data-theme='theme 2']{
+  /*Backgrounds */
+    --bg-color: hsl(0, 0%, 90%);
+    --bg-color-toogle: hsl(0, 5%, 81%);
+    --bg-color-screen: hsl(0, 0%, 93%);
+  
+    /* Keys */
+    --bg-color-delete: hsl(185, 42%, 37%);
+    --shadow-delete: hsl(185, 58%, 25%);
+    --bg-color-equal: hsl(25, 98%, 40%);
+    --shadow-equal: hsl(25, 99%, 27%);
+    --bg-color-keys: hsl(45, 7%, 89%);
+    --bg-shadow-keys: hsl(35, 11%, 61%);
+  
+    /* Text */
+    --color-text: hsl(60, 10%, 19%);
+    --color-text-secondary: hsl(0, 0%, 100%);
+    --color-text-white: hsl(0, 0%, 100%);
+    --color-title: hsl(60, 10%, 19%);
+    --color-text-attribution: orange;
+    --color-text-theme: hsl(60, 10%, 19%)
+    
+
+}
+
+:root[data-theme='theme 3'] {
+  /*Backgrounds */
+  --bg-color: hsl(268, 75%, 9%);
+  --bg-color-toogle: hsl(268, 71%, 12%);
+  --bg-color-screen: hsl(268, 71%, 12%);
+
+  /* Keys */
+  --bg-color-delete: hsl(281, 89%, 26%);
+  --shadow-delete: hsl(285, 91%, 52%);
+  --bg-color-equal: hsl(176, 100%, 44%);
+  --shadow-equal: hsl(177, 92%, 70%);
+  --bg-color-keys: hsl(268, 47%, 21%);
+  --bg-shadow-keys: hsl(290, 70%, 36%);
+
+  /* Text */
+  --color-text: hsl(52, 100%, 62%);
+  --color-text-secondary: hsl(198, 20%, 13%);
+  --color-text-white: hsl(0, 0%, 100%);
+  --color-title: hsl(52, 100%, 62%);
+  --color-text-attribution: white;
+  --color-text-theme: hsl(52, 100%, 62%);
+}
+
 .attribution {
-  font-size: 11px;
-  width: 300px;
+  font-size: 10px;
   text-align: center;
-  bottom: 30px;
-  position: absolute;
   text-align: center;
-  color: white;
-  font-size: 12px;
+  color: var(--color-text-attribution);
+  margin-top: 50px;
+  transition: all 0.8s ease-in-out;
+  height: 40px;
+}
+
+.attribution:hover{
+  transform: scale(120%);
+  font-size: 14px;
 }
 
 .attribution a {
-  color: hsl(110, 96%, 51%);
+  color: var(--color-text-attribution);
+  font-style: italic;
 }
+
+
 
 body{
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: hsl(222, 26%, 31%);
+  background-color: var(--bg-color);
   height: 100vh;
   position: relative
 }

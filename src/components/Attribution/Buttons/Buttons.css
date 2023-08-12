@@ -3,7 +3,7 @@
     grid-template-columns: repeat(4, 21%);
     padding: 18px 12px;
     gap: 10px;
-    background-color: hsl(223, 31%, 20%);
+    background-color: var(--bg-color-toogle);
     border-radius: 6px; 
     justify-content: center;
        
@@ -13,11 +13,11 @@
 .btn{
     font-family: 'League Spartan', sans-serif;
     padding: 6px;
-    background-color: hsl(30, 25%, 89%);
+    background-color: var(--bg-color-keys);
     border-radius: 5px;
     border: 0 solid transparent;
-    box-shadow: 0 2px 0 hsl(28, 16%, 65%);
-    color: hsl(221, 14%, 31%);
+    box-shadow: 0 2px 0 var(--bg-shadow-keys);
+    color: var(--color-text);
     font-size: 20px;
     text-align: center;
     cursor: pointer;
@@ -30,26 +30,26 @@
 }
 
 .btnViolet {
-    background-color: hsl(225, 21%, 49%);
-    color: hsl(0, 0%, 100%);
+    background-color: var(--bg-color-delete);
+    color: var(--color-text-white);
     font-size: 15px;
-    box-shadow: 0 2px 0 hsl(224, 28%, 35%);
+    box-shadow: 0 2px 0 var(--shadow-delete);
 }
 
 
 .reset{
 grid-column: 1 / span 2;
-background-color: hsl(225, 21%, 49%);
-color: hsl(0, 0%, 100%);
+background-color: var(--bg-color-delete);
+color: var(--color-text-white);
 font-size: 15px;
-    box-shadow: 0 2px 0 hsl(224, 28%, 35%);
+    box-shadow: 0 2px 0 var(--shadow-delete);
 }
 
 .calculate {
     grid-column: 3 / span 2;
-    background-color: hsl(6, 63%, 50%);
-    color: hsl(0, 0%, 100%);
+    background-color: var(--bg-color-equal);
+    color: var(--color-text-secondary);
     font-size: 15px;
-        box-shadow: 0 2px 0 hsl(6, 70%, 34%);
+        box-shadow: 0 2px 0 var(--shadow-equal);
 }
 

@@ -1,39 +1,79 @@
-
 import { useState } from "react";
 import "./App.css";
 import Attribution from "./components/Attribution/Attribution";
 import Buttons from "./components/Attribution/Buttons/Buttons";
 
 function App() {
-  const [result, setResult] = useState(0)
-  const [calculateResult, setCalculateResult] = useState([])
+  const [result, setResult] = useState(null);
+  const [showNumber, setShowNumber] = useState("");
+
+  const [theme, setTheme] = useState("theme 1"); // Inicialmente configurado en el tema 1
+
+ const handleThemeChange = () => {
+   let newTheme;
+   if (theme === "theme 1") {
+     newTheme = "theme 2";
+     document.documentElement.setAttribute("data-theme", "theme 2");
+   } else if (theme === "theme 2") {
+     newTheme = "theme 3";
+     document.documentElement.setAttribute("data-theme", "theme 3");
+   } else {
+     newTheme = "theme 1";
+     document.documentElement.setAttribute("data-theme", "theme 1");
+   }
+   setTheme(newTheme);
+ };
+ 
 
   const handleCalculate = (value) => {
-    switch(value){
-      case '1':
-        
+    if (value === "=") {
+      try {
+        const calculatedResult = eval(showNumber);
+        setResult(calculatedResult);
+        setShowNumber(calculatedResult.toString());
+      } catch (error) {
+        setResult("Error");
+        setShowNumber("");
+      }
+    } else if (value === "DEL") {
+      setShowNumber(showNumber.slice(0, -1));
+    } else if (value === "RESET") {
+      setShowNumber("");
+      setResult(null);
+    } else {
+      setShowNumber(showNumber + value);
     }
-    
-
-  }
+  };
 
   return (
-
-
     <>
       <div className="calculator">
-        calc
-        <div className="blockResult">
-          <p className="result">{result}</p>
+        <div className="header">
+          <span className="title">calc</span>
+
+          <div className="theme">
+            <span className="themeTitle">THEME</span>
+            <div className="toogle">
+              <span className="numTheme">1 2 3</span>
+              <input
+                type="checkbox"
+                id="toggle"
+                className="offscreen"
+                onChange={handleThemeChange}
+                checked={theme === "theme 2"}
+              />
+              <label htmlFor="toggle" className="switch" />
+            </div>
+          </div>
         </div>
-        <Buttons handleCalculate={handleCalculate}/>
 
-      
-
+        <div className="blockResult">
+          <p className="result">{result !== null ? result : showNumber}</p>
+        </div>
+        <Buttons handleCalculate={handleCalculate} />
       </div>
 
-      <Attribution/>
-      
+      <Attribution />
     </>
   );
 }

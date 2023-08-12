@@ -1,11 +1,41 @@
 .calculator{
   width: 400px;
-  color: hsl(0, 0%, 100%);
+  color: var(--color-text-secondary);
   font-family: 'League Spartan', sans-serif;
 }
 
+.header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.theme{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.themeTitle{
+  font-size: 12px;
+  color: var(--color-text-theme);
+  top: px;
+}
+
+.toogle{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px
+}
+
+.numTheme {
+  color: var(--color-text-theme);
+  font-size: 12px;
+  word-spacing: 10px;
+}
+
 .blockResult {
-  background-color: hsl(223, 31%, 20%);
+  background-color: var(--bg-color-screen);
   border-radius: 6px;
   text-align: end;
 }
@@ -14,6 +44,77 @@
   padding: 20px;
   font-size: x-large;
   font-family: 'League Spartan', sans-serif;
+  color: var(--color-text)
+}
+
+.title{
+  color: var(--color-title);
+  font-size: 30px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 70px;
+  height: 30px;
+  background-color: var(--bg-color-screen);
+  border-radius: 40px;
+  cursor: pointer;
+}
+
+.switch::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: var(--bg-color-equal);
+  border-radius: 40px;
+  left: 5px;
+  top: 5px;
+  transition: all 0.4s;
+  animation: moveToggle 0.4s ease-in-out;
+}
+
+.offscreen {
+  position: absolute;
+  display: none;
+}
+
+.offscreen:checked+.switch::after {
+  transform: translateX(40px);
+  background-color: var(--bg-color-equal);
+}
+
+.offscreen:checked[data-theme="theme 1"]+.switch::after {
+  animation-delay: 0.15s;
+  /* Retraso para el primer paso */
+}
+
+.offscreen:checked[data-theme="theme 2"]+.switch::after {
+  animation-delay: 0.3s;
+  /* Retraso para el segundo paso */
+}
+
+.offscreen:checked[data-theme="theme 3"]+.switch::after {
+  animation-delay: 0s;
+  /* Sin retraso para el tercer paso */
+}
+
+@keyframes moveToogle {
+ 
+  0% {
+    transform: translateX(0);
+  }
+  33.33% {
+    transform: translateX(40px);
+  }
+  66.66% {
+    transform: translateX(80px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+
 }
 
 @media screen and (min-width: 275px) and (max-width: 350px) {
