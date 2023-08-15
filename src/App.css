@@ -16,7 +16,7 @@
 }
 
 .themeTitle{
-  font-size: 12px;
+  font-size: 10px;
   color: var(--color-text-theme);
   top: px;
 }
@@ -35,14 +35,21 @@
 }
 
 .blockResult {
+  display: flex;
+  justify-content: end;
+  align-items: center;
   background-color: var(--bg-color-screen);
   border-radius: 6px;
   text-align: end;
+  height: 80px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  padding: 10px;
 }
 
 .result{
   padding: 20px;
-  font-size: x-large;
+  font-size: 40px;
   font-family: 'League Spartan', sans-serif;
   color: var(--color-text-theme)
 }
