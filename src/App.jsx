@@ -6,6 +6,9 @@ import Buttons from "./components/Attribution/Buttons/Buttons";
 function App() {
   const [result, setResult] = useState(null);
   const [showNumber, setShowNumber] = useState("");
+  const [inputHistory, setInputHistory] = useState([]);
+  const [currentInput, setCurrentInput] = useState(0);
+  
 
   const [theme, setTheme] = useState("theme 1"); // Inicialmente configurado en el tema 1
 
@@ -24,12 +27,46 @@ function App() {
    setTheme(newTheme);
  };
  
+ 
 
-  const handleCalculate = (value) => {
+ const handleCalculate = (value) => {
+  if (value === "=") {
+    try {
+      const inputToEvaluate = inputHistory.join("");
+      const calculatedResult = eval(inputToEvaluate);
+      setResult(calculatedResult);
+      setCurrentInput(calculatedResult.toString());
+      setInputHistory([calculatedResult.toString()]);
+    } catch (error) {
+      setResult("Error");
+    }
+  } else if (value === "DEL") {
+    const newInputHistory = [...inputHistory];
+    newInputHistory.pop();
+    setInputHistory(newInputHistory);
+    setCurrentInput(currentInput.slice(0, -1));
+  } else if (value === "RESET") {
+    setInputHistory([]);
+    setCurrentInput("");
+    setResult(null);
+  } else {
+    setInputHistory([...inputHistory, value]);
+    setCurrentInput(currentInput + value);
+  }
+};
+
+
+
+
+
+
+
+  /* const handleCalculate = (value) => {
     if (value === "=") {
       try {
         const calculatedResult = eval(showNumber);
         setResult(calculatedResult);
+        
         setShowNumber(calculatedResult.toString());
       } catch (error) {
         setResult("Error");
@@ -42,8 +79,9 @@ function App() {
       setResult(null);
     } else {
       setShowNumber(showNumber + value);
+      
     }
-  };
+  }; */
 
   return (
     <>
@@ -68,7 +106,7 @@ function App() {
         </div>
 
         <div className="blockResult">
-          <p className="result">{result !== null ? result : showNumber}</p>
+          <p className="result">{(result !== null) ? result : currentInput}</p>
         </div>
         <Buttons handleCalculate={handleCalculate} />
       </div>

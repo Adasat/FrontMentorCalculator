@@ -23,7 +23,7 @@ function Buttons({handleCalculate}) {
         <button value='.' onClick= {handleClick} className="btn">.</button>
         <button value='0' onClick={handleClick} className="btn">0</button>
         <button value='/' onClick={handleClick} className="btn">/</button>
-        <button value='x' onClick={handleClick} className="btn">x</button>
+        <button value='*' onClick={handleClick} className="btn">x</button>
         <button value='RESET' onClick={handleClick} className="btn reset">RESET</button>
         <button value='=' onClick={handleClick} className="btn calculate">=</button>
 
